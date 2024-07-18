@@ -1,0 +1,1180 @@
+/* Définir des variables pour les couleurs et les polices */
+:root {
+    --primary-color: #17273d; /* Bleu Foncé */
+    --secondary-color: #00BCD4; /* Cyan */
+    --accent-color: #9985ed; /* Bleu Clair */
+    --light-color: #F5F5F5; /* Gris Clair */
+    --dark-color: #1B3B5F; /* Bleu Clair */
+    --text-color: #333333; /* Gris Foncé */
+    --warm-neutral: #FFD700; /* Beige Or */
+    --highlight-color: #FF9800; /* Orange Doux */
+    --font-titles: 'Lato', sans-serif;
+    --font-subtitles: 'Lato', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Appliquer les polices */
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titles);
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+p, li, a, span {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+/* En-tête */
+header {
+    background-color: var(--primary-color);
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #FFFFFF; /* Blanc */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bannière */
+.banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, var(--secondary-color) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.banner-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 1;
+    z-index: -1;
+    filter: none;
+}
+
+.banner-content {
+    flex: 1;
+    text-align: left;
+    animation: fadeInLeft 1s ease-in-out;
+    padding-right: 2em;
+    max-width: 50%;
+    transform: translateY(-60px);
+}
+
+.banner h1 {
+    font-family: var(--font-titles);
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    animation: fadeInDown 1s ease-in-out;
+    line-height: 1.2em;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    animation: fadeInDown 1.2s ease-in-out;
+    line-height: 1.2em;
+}
+
+.banner .cta-button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1.4s ease-in-out;
+}
+
+.banner .cta-button:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+
+.banner-image {
+    flex: 1;
+    text-align: right;
+    animation: fadeInRight 1s ease-in-out;
+    max-width: 45%;
+    height: auto;
+    margin-right: 10%;
+    transform: translateY(-60px);
+}
+
+.banner-image img {
+    width: 130%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.banner-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Styles pour la section Performance */
+.performance-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 50%, var(--secondary-color) 100%);
+    color: white; /* Changer la couleur du texte en blanc */
+    padding: 1em 0;
+    text-align: center;
+    margin-bottom: 7em; /* Ajouter de l'espace en bas de la section */
+}
+
+.performance-banner .container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.performance-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.metric {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    color: white; /* Assurez-vous que la couleur du texte est blanche */
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric .year {
+    font-size: 1em;
+    font-family: var(--font-titles);
+    color: white; /* Assurez-vous que la couleur du texte est blanche */
+}
+
+.metric .value {
+    font-size: 1.2em;
+    font-family: var(--font-body);
+    margin-left: 0.5em;
+    color: white; /* Assurez-vous que la couleur du texte est blanche */
+}
+
+/* Styles pour la section "Notre Solution" */
+#notre-solution {
+    margin-top: 4em; /* Ajouter de l'espace en haut de la section */
+}
+
+.solution-title {
+    font-size: 2.5em; /* Agrandir le titre */
+    text-align: center;
+    margin-bottom: 0.5em; /* Réduire l'espace en dessous du titre */
+}
+
+.solution-content {
+    display: flex;
+    justify-content: center; /* Centrer la section */
+    align-items: center; /* Centrer verticalement le contenu */
+    margin-top: 5em; /* Réduire l'espace au-dessus */
+    margin-bottom: 10em; /* Ajouter beaucoup plus d'espace en-dessous */
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+.solution-image {
+    flex: 1;
+    padding-right: 5px; /* Réduire l'espace à droite de l'image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solution-image img {
+    width: auto;
+    height: 90%; /* Ajuster la hauteur de l'image */
+    max-height: 600px; /* Limite la hauteur maximale de l'image */
+    border-radius: 10px;
+}
+
+.solution-text {
+    flex: 1;
+    max-width: 40%; /* Limiter la largeur du texte */
+    padding-left: 5px; /* Réduire l'espace à gauche du texte */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer verticalement le texte par rapport à l'image */
+    padding-top: 50px; /* Ajuster l'espacement du texte vers le bas */
+}
+
+.solution-text .feature-box {
+    margin-bottom: 35px; /* Ajuster l'espace entre les blocs de caractéristiques */
+    padding-bottom: 0 !important;
+}
+
+.solution-text .feature-title {
+    display: flex;
+    align-items: center;
+}
+
+.solution-text .bullet {
+    color: var(--warm-neutral); /* Utiliser la couleur beige or */
+    font-size: 2em;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+.solution-text .feature-content h3 {
+    font-size: 1.5em;
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important; /* Ajuster l'interligne entre le titre et le texte */
+}
+
+.solution-text .feature-content p {
+    font-size: 1.2em;
+    margin: 0 !important; /* Supprimer les marges */
+    padding: 0 !important; /* Supprimer les paddings */
+    line-height: 1.4 !important; /* Ajuster l'interligne */
+}
+/* Styles pour la section Maîtrisez les Bases et Avancez avec Confiance */
+.training {
+    padding: 3em 0;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.training .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.training .introduction {
+    margin-bottom: 2em;
+    text-align: left;
+}
+
+.training .introduction h2 {
+    font-size: 2.5em;
+    color: var(--primary-color); /* Bleu Foncé */
+    text-align: center;
+    margin-bottom: 2em; /* Augmenter l'espace en dessous du titre */
+}
+
+.training .introduction p {
+    font-size: 1.5em;
+    color: var(--dark-color); /* Bleu Clair */
+    text-align: left;
+    margin: 3em auto 2em; /* Ajouter encore plus d'espace au-dessus du texte */
+    max-width: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Assurer que toutes les colonnes aient la même hauteur */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    background-color: #FFFFFF; /* Blanc */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    flex: 1 1 calc(33% - 40px);
+    text-align: center;
+    max-width: 300px;
+    border: 2px solid transparent; /* Pour la bordure avec dégradé */
+    transition: border 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column:hover {
+    transform: scale(1.05); /* Agrandir légèrement la colonne */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Augmenter l'ombre portée */
+    border-image: linear-gradient(135deg, var(--secondary-color), var(--accent-color)) 1; /* Ajouter un gradient à la bordure */
+}
+
+.column img {
+    max-width: 50px; /* Taille originale de l'icône */
+    margin-bottom: 1em;
+}
+
+.column p {
+    font-size: 1em;
+    color: var(--text-color); /* Gris Foncé */
+    line-height: 1.6;
+    text-align: center; /* Centrer le texte sous les logos */
+}
+
+.column h3 {
+    font-size: 1.2em; /* Ajuster la taille des titres dans les colonnes */
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+/* Styles pour la section DÃ©butez Facilement en Quelques Ã‰tapes */
+.setup {
+    padding: 3em 0;
+    background-color: #F5F5F5; /* Gris Clair */
+    text-align: center;
+}
+
+.setup .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.setup .introduction {
+    margin-bottom: 2em;
+    text-align: left; /* Alignement du texte Ã  gauche */
+}
+
+.setup .introduction h2 {
+    font-size: 2.5em;
+    color: #0A2540; /* Bleu FoncÃ© */
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.setup .introduction p {
+    font-size: 1.5em;
+    color: #1B3B5F; /* Bleu Clair */
+    margin: 0 auto 2em;
+    text-align: left;
+    max-width: 100%;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step {
+    background-color: #FFFFFF; /* Blanc */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    flex: 1 1 calc(25% - 40px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Initialement invisible */
+    transform: translateY(20px); /* Initialement dÃ©placÃ© vers le bas */
+}
+
+.step.show {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* Remis en place */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.step img {
+    max-width: 50px;
+    margin-bottom: 1em;
+}
+
+.step h3 {
+    margin-bottom: 0.5em;
+    color: var(--primary-color); /* Couleur primaire pour le texte */
+    font-family: var(--font-family-alt);
+}
+
+.step p {
+    color: var(--text-color); /* Couleur du texte */
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+}
+
+.step:hover {
+    transform: scale(1.05); /* Effet de zoom sur hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cta {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #00BCD4 0%, #7B1FA2 100%);
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #7B1FA2 0%, #00BCD4 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* Styles pour la section Support et Analyses */
+#support-analyses {
+    background-color: #FFFFFF; /* Fond blanc */
+    margin-top: 5em; /* Ajouter de l'espace en haut de la section */
+    margin-bottom: 5em; /* Ajouter de l'espace en bas de la section */
+    padding-top: 3em; /* Ajouter de l'espace entre le début de la section et le contenu */
+    padding-bottom: 3em; /* Ajouter de l'espace entre la fin de la section et le contenu */
+}
+
+.support-analyses .solution-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.support-analyses .solution-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    margin-bottom: 10em;
+    text-align: left;
+}
+
+.support-analyses .solution-text {
+    flex: 1;
+    max-width: 40%;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.support-analyses .solution-text .feature-box {
+    margin-bottom: 35px;
+    padding-bottom: 0 !important;
+}
+
+.support-analyses .solution-text .feature-title {
+    display: flex;
+    align-items: center;
+}
+
+.support-analyses .solution-text .bullet {
+    color: var(--warm-neutral);
+    font-size: 2em;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+.support-analyses .solution-text h3 {
+    font-size: 1.5em;
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.support-analyses .solution-text p {
+    font-size: 1.2em;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.support-analyses .solution-image {
+    flex: 1;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.support-analyses .solution-image img {
+    width: auto;
+    height: 90%;
+    max-height: 600px;
+    border-radius: 10px;
+}
+/* Styles pour la section Sécurité Totale */
+#securite-totale {
+    background-color: var(--light-color);
+    margin-top: 5em; /* Ajouter de l'espace en haut de la section */
+    margin-bottom: 5em; /* Ajouter de l'espace en bas de la section */
+    padding-top: 3em; /* Ajouter de l'espace entre le début de la section et le contenu */
+    padding-bottom: 3em; /* Ajouter de l'espace entre la fin de la section et le contenu */
+}
+
+#securite-totale .solution-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+#securite-totale .solution-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+    margin-bottom: 10em;
+    text-align: left;
+}
+
+#securite-totale .solution-text {
+    flex: 1;
+    max-width: 40%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+#securite-totale .solution-text .feature-box {
+    margin-bottom: 35px;
+    padding-bottom: 0 !important;
+}
+
+#securite-totale .solution-text .feature-title {
+    display: flex;
+    align-items: center;
+}
+
+#securite-totale .solution-text .bullet {
+    color: var(--warm-neutral);
+    font-size: 2em;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+#securite-totale .solution-text h3 {
+    font-size: 1.5em;
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+}
+
+#securite-totale .solution-text p {
+    font-size: 1.2em;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.4 !important;
+}
+
+#securite-totale .solution-image {
+    flex: 1;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#securite-totale .solution-image img {
+    width: auto;
+    height: 90%;
+    max-height: 600px;
+    border-radius: 10px;
+}
+/* Section Nos Résultats */
+#nos-resultats {
+    padding: 60px 0;
+    background-color: var(--light-color);
+    text-align: center;
+}
+
+#nos-resultats .introduction {
+    margin-bottom: 40px;
+}
+
+#nos-resultats .solution-title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+#nos-resultats p {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+#nos-resultats .solution-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0 5em;
+}
+
+#nos-resultats .performance-kpis {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+}
+
+#nos-resultats .kpi {
+    flex: 1 1 200px;
+    margin: 10px;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 20px;
+    border-radius: 15px; /* Arrondi des coins */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Ajout de la transition pour la bordure */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet bombé */
+    border: 2px solid transparent;
+}
+
+#nos-resultats .kpi:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-image: linear-gradient(135deg, var(--secondary-color), var(--accent-color)) 1; /* Bordure en dégradé */
+}
+
+#nos-resultats .kpi-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Utiliser la même couleur que le titre */
+}
+
+#nos-resultats .kpi-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(0, 188, 212, 1); /* Bleu similaire à Easy Crypto */
+}
+
+#nos-resultats .kpi-value.drawdown {
+    display: block; /* S'assurer que le pourcentage est en dessous du texte */
+    margin-top: 10px; /* Ajouter un peu d'espace au-dessus */
+    color: rgba(0, 188, 212, 1); /* Bleu similaire à Easy Crypto */
+}
+
+#nos-resultats .graphs {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#nos-resultats canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+}
+
+#nos-resultats .cta {
+    text-align: center;
+    margin-top: 2em;
+}
+
+#nos-resultats .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#nos-resultats .cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+
+/* Styles pour la section de tarifs */
+.pricing {
+    padding: 3em 0;
+    background-color:var(--light-color);
+    text-align: center;
+}
+
+.pricing .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pricing h2 {
+    font-family: var(--font-subtitles);
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+.pricing-option {
+    background-color: #FFFFFF;
+    border: 1px solid var(--dark-color);
+    padding: 2em;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.pricing-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-option h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+.pricing-option .price {
+    font-size: 1.2em;
+    color: #E53935; /* Rouge */
+    margin-bottom: 1em;
+}
+
+.pricing-option ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.pricing-option ul li {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-option ul li::before {
+    content: '✔️';
+    margin-right: 0.5em;
+    color: var(--secondary-color);
+}
+
+.pricing-option .cta-button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 1em;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-option .cta-button:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* Styles pour la section FAQ */
+.faq {
+    padding: 3em 0;
+    background-color: var(--light-color);
+}
+
+.faq .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq h2 {
+    font-family: var(--font-subtitles);
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.faq-item {
+    margin-bottom: 2em;
+    text-align: left;
+}
+
+.faq-item h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    position: relative;
+    padding-right: 2em;
+}
+
+.faq-item h3::after {
+    content: '➕';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.3em;
+    transition: transform 0.3s;
+}
+
+.faq-item p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    display: none;
+    margin-top: 0.5em;
+}
+
+.faq-item.active h3::after {
+    transform: rotate(45deg);
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* Styles pour la section des témoignages */
+.testimonials {
+    padding: 3em 0;
+    background-color:  #FFFFFF;
+    text-align: center;
+}
+
+.testimonials .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.testimonials h2 {
+    font-family: var(--font-subtitles);
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.testimonial-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: #FFFFFF;
+    border: 1px solid var(--dark-color);
+    padding: 2em;
+    margin: 1em;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.testimonial h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+.testimonial p {
+    font-size: 1em;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.cta p {
+    font-size: 1.2em;
+    color: var(--dark-color);
+    margin-bottom: 1em;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* Styles pour la section de contact */
+.contact {
+    padding: 3em 0;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact h2 {
+    font-family: var(--font-subtitles);
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.contact p {
+    font-size: 1.2em;
+    color: var(--dark-color);
+    margin-bottom: 2em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid var(--dark-color);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button:hover {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: var(--primary-color);
+    color: #cccccc;
+    text-align: center;
+    padding: 2em 0;
+    font-size: 0.9em;
+}
+
+footer .logo-footer {
+    height: 40px;
+    margin-bottom: 1em;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 1em 0;
+    flex-wrap: wrap;
+}
+
+footer nav ul li {
+    margin: 0 1em;
+}
+
+footer nav ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+footer .footer-text {
+    font-size: 0.9em;
+    color: #cccccc;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 1em;
+    line-height: 1.4em;
+}
+
+footer .footer-text p {
+    margin: 0.5em 0;
+    color: #cccccc;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
